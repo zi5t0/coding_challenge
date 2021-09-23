@@ -24,14 +24,15 @@ class FilmSearchController extends Controller
 
         // TO-DO: Refactor this
         $film_name = ($request->has('q') && $request->get('q') != null) ? $request->get('q') : null;
+        $local_film = $this->repository->search($film_name);
 
-        $resp = $this->repository->search($film_name);
-        if ($resp == null) {
-            $film = $this->api_connector_service->getFilmResponse($film_name);
-            $this->repository->create($film);
-            return $film;
+        // TO-DO: Check to refactor or not
+        if ($local_film != null) {
+            return $local_film;
+        } else {
+            $remote_film = $this->api_connector_service->getFilmResponse($film_name);
+            $this->repository->create($remote_film);
+            return $remote_film;
         }
-
-        return $resp;
     }
 }
