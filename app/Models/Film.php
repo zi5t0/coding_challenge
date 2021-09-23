@@ -10,13 +10,14 @@ class Film extends Model
     use HasFactory;
 
     protected $fillable = [
-        id,
-        name,
-        type,
-        language,
-        genres,
-        runtime,
-        summary
+        'name',
+        'type',
+        'language',
+        'genres',
+        'runtime',
+        'summary'
     ];
-    
+
+    protected $table = 'films';
+
 }
