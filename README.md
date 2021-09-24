@@ -1,4 +1,4 @@
-# ![Fashionette Coding Challenge]
+# Fashionette Coding Challenge
 
 ----------
 
