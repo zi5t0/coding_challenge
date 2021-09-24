@@ -22,7 +22,7 @@ final class FilmRepository
 
     public function search($name)
     {
-        $film = $this->model->where("name", "=", $name)->get(['name','language', 'genres', 'runtime', 'summary'])->first();
+        $film = $this->model->where("name", "=", $name)->get(['name','type','language', 'genres', 'runtime', 'summary'])->first();
         return $film;
     }
 }

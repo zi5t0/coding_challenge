@@ -12,8 +12,9 @@ final class ApiConnectorService
     protected $http;
     protected $headers;
 
-    public function __construct(Client $client)
+    public function __construct(Client $client=null)
     {
+        $client = new Client();
         $this->url = 'https://api.tvmaze.com/search/shows?q=';
         $this->http = $client;
         $this->headers = [

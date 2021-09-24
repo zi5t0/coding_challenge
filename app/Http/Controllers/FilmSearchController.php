@@ -27,8 +27,7 @@ class FilmSearchController extends Controller
 
         if ($this->film_filter->filter($request) == false) {
             // Refactor this with appropiate response
-            return response()->json(['error' => 'Incorrect URL, please use ?q=* format'], 404);        
-
+            return response()->json(['error' => 'Incorrect URL, please use ?q=* format'], 404);              
         }
         
         $film_name = $request->get('q');
@@ -44,7 +43,6 @@ class FilmSearchController extends Controller
             } else {
                 return response()->json(['error' => 'Film not found.'], 204);        
             }
-
         }
     }
 }
