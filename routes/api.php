@@ -14,15 +14,4 @@ use App\Http\Controllers\FilmSearchController;
 |
 */
 
-
 Route::get('', [FilmSearchController::class, 'search']);
-/*
-Route::get('{query}', array('as'=>'search-api', 'uses'=>'Controllers\FilmSearchController@search'))
-    ->where('query','\?q\=.*');*/
-/*
-Route::fallback(function(){
-    return "Invalid query String";
-});*/
-
-
-
