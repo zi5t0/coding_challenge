@@ -7,6 +7,9 @@
 ## Requirements
 - Docker
 - PHP >= 7.4
+  - php-xml
+  - php-mbstring
+  - php-cli
 - Composer 2
 ## Installation
 
