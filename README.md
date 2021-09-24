@@ -6,6 +6,7 @@
 
 ## Requirements
 - Docker
+  - docker-compose
 - PHP >= 7.4
   - php-xml
   - php-mbstring
@@ -33,6 +34,10 @@ Copy the example env file (already preconfigure) in the .env file
 
     cp .env.example .env
 
+Raise the server:
+
+    ./vendor/bin/sail up &
+    
 Configuring the DB:
 
     docker-compose exec mysql mysql -uroot
@@ -44,11 +49,9 @@ Configuring the DB:
 
 Run the database migrations
 
-    php artisan migrate
-    
-Finally, get the server up
+    ./vendor/bin/sail php artisan migrate
 
-    ./vendor/bin/sail up
+
     
 
 # Future improvements and changes
